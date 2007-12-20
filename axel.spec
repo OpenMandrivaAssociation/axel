@@ -9,6 +9,7 @@ Release: 	%release
 Source:         http://wilmer.gaast.net/downloads/%name-%version.tar.bz2
 Url: 		http://wilmer.gaast.net/main.php/axel.html
 Group:		Networking/File transfer
+BuildRoot: 	%{_tmppath}/%{name}-buildroot
 License: GPL
 
 %description
