@@ -1,16 +1,16 @@
 %define name 	axel
-%define version 1.0b
+%define version 1.1
 %define release %mkrel 1
 
 Name: 		%name
 Summary: 	A light Linux download accelerator - Console version
 Version: 	%version
 Release: 	%release
-Source:         http://wilmer.gaast.net/downloads/%name-%version.tar.bz2
-Url: 		http://wilmer.gaast.net/main.php/axel.html
+Source:         http://alioth.debian.org/frs/download.php/2287/%name-%version.tar.gz
+Url: 		http://axel.alioth.debian.org/
 Group:		Networking/File transfer
 BuildRoot: 	%{_tmppath}/%{name}-buildroot
-License: GPL
+License: GPLv2+
 
 %description
 Axel tries to accelerate the downloading process by using multiple
@@ -26,13 +26,11 @@ rm -rf $RPM_BUILD_ROOT
 
 %build
 ./configure --prefix=%{_prefix} --libdir=%_libdir --etcdir=%{_sysconfdir} --i18n=1
-
+echo 'CFLAGS=%optflags' >> Makefile.settings
 %make
 
 %install
-
-%makeinstall DESTDIR=$RPM_BUILD_ROOT
-
+%makeinstall_std
 %find_lang %name
 
 %clean
