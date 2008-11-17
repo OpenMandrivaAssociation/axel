@@ -1,12 +1,12 @@
 %define name 	axel
-%define version 1.1
-%define release %mkrel 3
+%define version 2.2
+%define release %mkrel 1
 
 Name: 		%name
 Summary: 	A light Linux download accelerator - Console version
 Version: 	%version
 Release: 	%release
-Source:         http://alioth.debian.org/frs/download.php/2287/%name-%version.tar.gz
+Source:         http://alioth.debian.org/frs/download.php/2287/%name-%version.tar.bz2
 Url: 		http://axel.alioth.debian.org/
 Group:		Networking/File transfer
 BuildRoot: 	%{_tmppath}/%{name}-buildroot
@@ -20,8 +20,6 @@ as possible (25-30k in binary form), so it might be useful as a wget clone
 on byte-critical systems.
 
 %prep
-rm -rf $RPM_BUILD_ROOT
-
 %setup -q
 
 %build
@@ -30,6 +28,7 @@ echo 'CFLAGS=%optflags' >> Makefile.settings
 %make
 
 %install
+rm -fr %buildroot
 %makeinstall_std
 %find_lang %name
 
