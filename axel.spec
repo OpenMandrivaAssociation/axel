@@ -1,5 +1,5 @@
 %define name 	axel
-%define version 2.2
+%define version 2.3
 %define release %mkrel 1
 
 Name: 		%name
@@ -40,4 +40,5 @@ rm -rf $RPM_BUILD_ROOT
 %{_bindir}/axel
 %config(noreplace) %verify(not size mtime md5) %{_sysconfdir}/axelrc
 %{_mandir}/man1/axel.1*
+%lang(zh_C) %{_mandir}/zh_CN/man1/*
 %doc CREDITS CHANGES README axelrc.example
