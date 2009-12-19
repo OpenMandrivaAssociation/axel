@@ -1,6 +1,6 @@
 %define name 	axel
-%define version 2.3
-%define release %mkrel 2
+%define version 2.4
+%define release %mkrel 1
 
 Name: 		%name
 Summary: 	A light Linux download accelerator - Console version
