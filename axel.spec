@@ -1,7 +1,7 @@
 Summary:	A light Linux download accelerator - Console version
 Name:		axel
 Version:	2.4
-Release:	3
+Release:	4
 License:	GPLv2+
 Group:		Networking/File transfer
 Url:		http://axel.alioth.debian.org/
