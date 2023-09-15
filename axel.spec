@@ -1,11 +1,11 @@
 Summary:	A light Linux download accelerator - Console version
 Name:		axel
-Version:	2.4
-Release:	4
+Version:	2.17.11
+Release:	1
 License:	GPLv2+
 Group:		Networking/File transfer
-Url:		http://axel.alioth.debian.org/
-Source0:	http://alioth.debian.org/frs/download.php/2287/%name-%version.tar.bz2
+Url:		https://github.com/axel-download-accelerator/axel
+Source0:	https://github.com/axel-download-accelerator/axel/releases/download/v%{version}/axel-%{version}.tar.xz
 
 %description
 Axel tries to accelerate the downloading process by using multiple
@@ -16,28 +16,18 @@ on byte-critical systems.
 
 %files -f %{name}.lang
 %{_bindir}/axel
-%config(noreplace) %verify(not size mtime md5) %{_sysconfdir}/axelrc
 %{_mandir}/man1/axel.1*
-%lang(zh_C) %{_mandir}/zh_CN/man1/*
-%doc CREDITS CHANGES README axelrc.example
 
 #----------------------------------------------------------------------------
 
 %prep
-%setup -q
+%autosetup -p1
+%configure
 
 %build
-./configure \
-	--prefix=%{_prefix} \
-	--libdir=%{_libdir} \
-	--etcdir=%{_sysconfdir} \
-	--i18n=1 \
-	--strip=0
-echo 'CFLAGS=%{optflags}' >> Makefile.settings
-%make
+%make_build
 
 %install
-%makeinstall_std
+%make_install
 
 %find_lang %{name}
-
