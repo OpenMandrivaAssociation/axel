@@ -6,6 +6,10 @@ License:	GPLv2+
 Group:		Networking/File transfer
 Url:		https://github.com/axel-download-accelerator/axel
 Source0:	https://github.com/axel-download-accelerator/axel/releases/download/v%{version}/axel-%{version}.tar.xz
+BuildRequires:	automake
+BuildRequires:	autoconf
+BuildRequires:	gettext-devel
+BuildRequires:	make
 
 %description
 Axel tries to accelerate the downloading process by using multiple
