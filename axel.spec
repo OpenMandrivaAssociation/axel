@@ -1,3 +1,5 @@
+%define _disable_rebuild_configure 1
+
 Summary:	A light Linux download accelerator - Console version
 Name:		axel
 Version:	2.17.11
