@@ -12,6 +12,7 @@ BuildRequires:	automake
 BuildRequires:	autoconf
 BuildRequires:	gettext-devel
 BuildRequires:	make
+BuildRequires:	pkgconfig(libssl)
 
 %description
 Axel tries to accelerate the downloading process by using multiple
