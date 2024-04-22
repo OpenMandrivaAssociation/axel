@@ -2,7 +2,7 @@
 
 Summary:	A light Linux download accelerator - Console version
 Name:		axel
-Version:	2.17.13
+Version:	2.17.14
 Release:	1
 License:	GPLv2+
 Group:		Networking/File transfer
