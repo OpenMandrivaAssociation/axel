@@ -8,6 +8,8 @@ License:	GPLv2+
 Group:		Networking/File transfer
 Url:		https://github.com/axel-download-accelerator/axel
 Source0:	https://github.com/axel-download-accelerator/axel/releases/download/v%{version}/axel-%{version}.tar.xz
+BuildRequires:	libtool-base
+BuildRequires:	slibtool
 BuildRequires:	automake
 BuildRequires:	autoconf
 BuildRequires:	gettext-devel
